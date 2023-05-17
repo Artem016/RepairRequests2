@@ -1,0 +1,49 @@
+﻿<Window x:Class="RepairRequests2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RepairRequests2"
+        mc:Ignorable="d"
+        MaxHeight="450" MinHeight="450" MaxWidth="450" MinWidth="450"
+        Title="MainWindow" Height="450" Width="450">
+
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Column="0">
+            <StackPanel>
+                <Button>
+                    <TextBlock x:Name="СlientName" HorizontalAlignment="Left">ФИО</TextBlock>
+                </Button>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Button x:Name="AddRequest" Click="AddRequest_Click" 
+                    FontWeight = "ExtraBold" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Image Source="Images/AddRequestImage.png"></Image>
+            </Button>
+
+            <CheckBox x:Name="IsDoneShow" Grid.Row="0" Grid.Column="1"
+                  Content="Показывать выполненые заявки"
+                  FontWeight="Bold" Foreground="#363636"
+                  VerticalAlignment="Top" Checked="IsDoneShow_Checked">
+                <CheckBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </CheckBox.Resources>
+            </CheckBox>
+        </Grid>
+
+        <!--Создание кнопким с именем и размерами-->
+        
+    </Grid>
+</Window>

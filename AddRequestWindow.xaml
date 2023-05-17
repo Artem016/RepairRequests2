@@ -1,0 +1,31 @@
+﻿<Window x:Class="RepairRequests2.AddRequestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RepairRequests2"
+        mc:Ignorable="d"
+        Title="AddRequestWindow" Height="410" Width="450">
+    <Grid>
+        <StackPanel>
+            <TextBlock>ФИО</TextBlock>
+                <TextBox x:Name="FioTextBox" Height="30"/>
+
+            <TextBlock>Тип техники</TextBlock>
+                <TextBox x:Name="TypeEquipmenTextBox" Height="30"></TextBox>
+
+            <TextBlock>Бренд техники</TextBlock>
+                <TextBox x:Name="BrandEquimenTextBox" Height="30"></TextBox>
+
+            <TextBlock>Модель техники</TextBlock>
+                <TextBox x:Name="ModelEquimenTextBox" Height="30"></TextBox>
+
+            <TextBlock>Описание проблемы</TextBlock>
+                <TextBox x:Name="DiscriptionProblemTextBox" Height="140"></TextBox>
+
+            <Button x:Name="SaveRequest" Height="30" Width="100" Content="Сохранить"
+                    HorizontalAlignment="Right" Click="SaveRequest_Click"></Button>
+
+        </StackPanel>
+    </Grid>
+</Window>
