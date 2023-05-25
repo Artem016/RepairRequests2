@@ -14,14 +14,9 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+ 
 
-        <Grid Grid.Column="0">
-            <StackPanel>
-                <Button>
-                    <TextBlock x:Name="СlientName" HorizontalAlignment="Left">ФИО</TextBlock>
-                </Button>
-
-            </StackPanel>
+        <Grid Grid.Column="0" x:Name="addRequest">
 
         </Grid>
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,9 +18,15 @@ namespace RepairRequests2
 {       
     public partial class MainWindow : Window
     {
+        public SerialiseRequst serialiseRequst = new SerialiseRequst();
+        public static MainWindow mainWindow;
+        public List<Request> ListOfRequest;
+
         public MainWindow()
         {
+            mainWindow = this;
             InitializeComponent();
+            ListOfRequest = serialiseRequst.DeserializeListOfRequest();
         }//Стандартаная команда появления главного окна
 
         private void AddRequest_Click(object sender, RoutedEventArgs e)
