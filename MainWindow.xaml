@@ -5,31 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RepairRequests2"
         mc:Ignorable="d"
-        MaxHeight="450" MinHeight="450" MaxWidth="450" MinWidth="450"
-        Title="MainWindow" Height="450" Width="450">
+        MaxHeight="600" MinHeight="600" MaxWidth="600" MinWidth="600"
+        Title="MainWindow" Height="600" Width="600">
 
     <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
- 
 
-        <Grid Grid.Column="0" x:Name="addRequest">
-            <StackPanel x:Name="StackOfRequst">
-                
-            </StackPanel>
-        </Grid>
-
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Grid.Row="1">
             <Button x:Name="AddRequest" Click="AddRequest_Click" 
                     FontWeight = "ExtraBold" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                 <Image Source="Images/AddRequestImage.png"></Image>
             </Button>
         </Grid>
 
-        <!--Создание кнопким с именем и размерами-->
-        
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="ShowOnlyCompletedRequests" Click="ShowOnlyCompletedRequests_Click" Width="100" HorizontalAlignment="Center">
+                    <TextBlock TextAlignment="Center">Только<LineBreak/>выполненные</TextBlock>
+                </Button>
+                <Button x:Name="ShowOnlyIncompletedRequests" Click="ShowOnlyIncompletedRequests_Click" Width="100">
+                    <TextBlock TextAlignment="Center">Только<LineBreak/>невыполненные</TextBlock>
+                </Button>
+                <Button x:Name="ShowAllRequests" Click="ShowAllRequests_Click" Width="100">
+                    <TextBlock TextAlignment="Center">Все<LineBreak/>заявки</TextBlock>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel x:Name="StackOfRequst">
+                
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

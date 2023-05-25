@@ -44,5 +44,20 @@ namespace RepairRequests2
                 Request.AddButtonRequest(request);
             }
         }
+
+        private void ShowOnlyCompletedRequests_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShowOnlyIncompletedRequests_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShowAllRequests_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

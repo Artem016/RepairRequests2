@@ -55,9 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChangeRequestWindow.xaml.cs">
+      <DependentUpon>ChangeRequestWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Request.cs" />
     <Compile Include="SerialiseRequst.cs" />
     <Page Include="AddRequestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeRequestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

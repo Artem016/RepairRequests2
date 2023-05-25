@@ -35,6 +35,16 @@ namespace RepairRequests2
         public static void AddButtonRequest(Request request)
         {
             Button newButtonRequest = new Button();
+            newButtonRequest.Click += delegate
+            {
+                AddRequestWindow addRequestWindow = new AddRequestWindow();
+                addRequestWindow.Show();
+                addRequestWindow.FioTextBox.Text = request.fio;
+                addRequestWindow.TypeEquipmenTextBox.Text = request.typeEquipmen;
+                addRequestWindow.ModelEquimenTextBox.Text = request.modelEquimen;
+                addRequestWindow.BrandEquimenTextBox.Text = request.brandEquimen;
+                addRequestWindow.DiscriptionProblemTextBox.Text = request.discriptionProblem;
+            };
             newButtonRequest.Content = $"{request.fio} --> {request.typeEquipmen}";
             MainWindow.mainWindow.StackOfRequst.Children.Add(newButtonRequest);
         }
