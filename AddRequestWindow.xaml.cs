@@ -20,6 +20,8 @@ namespace RepairRequests2
     /// </summary>
     public partial class AddRequestWindow : Window
     {
+        SerialiseRequst serialiseRequst = new SerialiseRequst();
+
         public AddRequestWindow()
         {
             InitializeComponent();
@@ -35,6 +37,11 @@ namespace RepairRequests2
                 false, 
                 DateTime.Now);//создание обьекта заявки.
 
+            MainWindow.mainWindow.ListOfRequest.Add(request);
+            serialiseRequst.SerialiseListOfRequst(MainWindow.mainWindow.ListOfRequest);
+
+            Request.AddButtonRequest(request);
+            this.Close();
         }
     }
 }

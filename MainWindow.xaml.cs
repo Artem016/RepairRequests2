@@ -27,22 +27,22 @@ namespace RepairRequests2
             mainWindow = this;
             InitializeComponent();
             ListOfRequest = serialiseRequst.DeserializeListOfRequest();
-        }//Стандартаная команда появления главного окна
-
-        private void AddRequest_Click(object sender, RoutedEventArgs e)
-        {
-            //С помощья Cntr + Shift + A мы создаем новое окно для программы.
-            AddRequestWindow addRequestWindow = new AddRequestWindow();
-            //Создаем обьект данного окна, при нажатии на кнопку, чтобы можно было показать его пользователю.
-            addRequestWindow.Show();//показываем пользователю окно
-            addRequestWindow.Owner = this;//иницаализация окна MainWindow как владельца окна AddRequestWindow, то есть при закрытии галвног окна, закрывается и дочернее, но не наоборот.
+            AddOldRequests();
         }
 
-        internal bool isDoneShow;
+        private void AddRequest_Click(object sender, RoutedEventArgs e) //открытие окна для добавления заявки
+        {           
+            AddRequestWindow addRequestWindow = new AddRequestWindow();
+            addRequestWindow.Show();
+            addRequestWindow.Owner = this;
+        }
 
-        private void IsDoneShow_Checked(object sender, RoutedEventArgs e)
+        public void AddOldRequests() //добавление страрых заявок при запуске программы.
         {
-            isDoneShow = true;
+            foreach (var request in ListOfRequest)
+            {
+                Request.AddButtonRequest(request);
+            }
         }
     }
 }

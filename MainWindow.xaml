@@ -17,7 +17,9 @@
  
 
         <Grid Grid.Column="0" x:Name="addRequest">
-
+            <StackPanel x:Name="StackOfRequst">
+                
+            </StackPanel>
         </Grid>
 
         <Grid Grid.Column="1">
@@ -25,17 +27,6 @@
                     FontWeight = "ExtraBold" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                 <Image Source="Images/AddRequestImage.png"></Image>
             </Button>
-
-            <CheckBox x:Name="IsDoneShow" Grid.Row="0" Grid.Column="1"
-                  Content="Показывать выполненые заявки"
-                  FontWeight="Bold" Foreground="#363636"
-                  VerticalAlignment="Top" Checked="IsDoneShow_Checked">
-                <CheckBox.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </CheckBox.Resources>
-            </CheckBox>
         </Grid>
 
         <!--Создание кнопким с именем и размерами-->

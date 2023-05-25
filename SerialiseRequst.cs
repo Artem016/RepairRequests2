@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,16 @@ namespace RepairRequests2
         {
             using (var file = new FileStream("text.json", FileMode.OpenOrCreate))
             {
-                return binaryFormatter.Deserialize(file) as List<Request>;
+                try
+                {
+                    var ListOfRequest = binaryFormatter.Deserialize(file) as List<Request>;
+                    return ListOfRequest;
+                }
+                catch
+                {
+                    return new List<Request>();
+
+                }    
             }
         }
     }
